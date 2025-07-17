@@ -1,0 +1,30 @@
+{
+	"name": "bun-react-template",
+	"version": "0.1.0",
+	"scripts": {
+		"dev": "bun --hot server.ts",
+		"start": "NODE_ENV=production bun server.ts",
+		"build": "rm -rf dist; bun build --production --target=bun --outdir=dist server.ts",
+		"run-dist": "bun --cwd=dist server.js",
+		"docker-build": "docker build -t bun-react-template .",
+		"run-docker": "docker run --rm -it --net=host bun-react-template",
+		"upgrade": "bun update --latest",
+		"check": "deno fmt --use-tabs --quiet; oxlint --fix-dangerously --quiet; timeout 3s biome check --write --unsafe .",
+		"lint": "tsc --noEmit",
+		"all": "bun run upgrade; bun run check; bun run lint"
+	},
+	"dependencies": {
+		"@hono/zod-validator": "^0.7.1",
+		"@tanstack/react-query": "^5.83.0",
+		"hono": "^4.8.5",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"wouter": "^3.7.1",
+		"zod": "^4.0.5"
+	},
+	"devDependencies": {
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"@types/bun": "^1.2.18"
+	}
+}
