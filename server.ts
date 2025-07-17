@@ -40,7 +40,7 @@ const app = new Hono()
 		(c) => {
 			const name = c.req.valid("json")?.name;
 			return c.json({
-				message: `Hello from the server, ${name}! My current counter is ${counter}.`,
+				message: `Hello ${name}, from the server! My current counter is ${counter}.`,
 			});
 		},
 	)

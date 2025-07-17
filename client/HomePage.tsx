@@ -8,12 +8,12 @@ export const HomePage = () => {
 	return (
 		<div>
 			<title>Home</title>
-			<h1>Bun + React + Hono + Wouter</h1>
+			<h1>Bun, Hono, React, Wouter and React-Query</h1>
 			<p>
-				Edit <code>src/App.tsx</code> and save to test HMR
+				Edit <code>client/HomePage.tsx</code> and save to test HMR
 			</p>
 			<p>
-				Hello from the server: <strong>{hello.data?.message}</strong>
+				Message: <strong>{hello.data?.message}</strong>
 			</p>
 			<input
 				type="text"
