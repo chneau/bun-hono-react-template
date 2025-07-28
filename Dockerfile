@@ -1,4 +1,3 @@
-
 FROM oven/bun AS build
 WORKDIR /app
 COPY package.json bun.lock .
