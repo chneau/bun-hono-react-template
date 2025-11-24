@@ -1,4 +1,3 @@
-import "./fixCompression";
 import { zValidator } from "@hono/zod-validator";
 import { serve } from "bun";
 import { Hono } from "hono";
