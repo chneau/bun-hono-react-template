@@ -13,7 +13,7 @@ export const HomePage = () => {
 				Edit <code>client/HomePage.tsx</code> and save to test HMR
 			</p>
 			<p>
-				Message: <strong>{hello.data?.message}</strong>
+				Message: <strong>{hello.data}</strong>
 			</p>
 			<input
 				type="text"
