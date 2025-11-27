@@ -3,7 +3,7 @@ import { useHelloQuery, useIncrementMutation } from "./client";
 
 export const HomePage = () => {
 	const [name, setName] = useState<string>("world");
-	const hello = useHelloQuery({ name });
+	const hello = useHelloQuery(name);
 	const increment = useIncrementMutation();
 	return (
 		<div>
