@@ -4,13 +4,23 @@ This is a small template using Bun, Hono, React, Wouter and React-Query.
 
 ## Features
 
-- **Bun**: A fast all-in-one JavaScript runtime, bundler, transpiler and package
-  manager.
-- **Hono**: A small, simple, and ultrafast web framework for the Edge.
-- **React**: A JavaScript library for building user interfaces.
-- **Wouter**: A minimalist routing library for React.
-- **React Query**: A library for fetching, caching and updating asynchronous
-  data in React.
+This template is designed for simplicity and developer efficiency:
+
+- **Unified Tooling**: Bun handles everything from running React to serving both
+  client and API, reducing the number of tools you need to manage.
+- **RPC-style API**: Hono facilitates clean, RPC-style API calls, making
+  client-server communication straightforward.
+- **Strong Typing with Zod**: Zod ensures robust type-checking and validation
+  for all RPC calls, enhancing data integrity and developer confidence.
+- **Single Dockerfile**: A single Dockerfile simplifies deployment and local
+  development setup.
+- **Developer-Friendly**: Minimal tooling and clear structure ensure a smooth
+  development experience.
+- **Simplified Routing**: Wouter makes routing intuitive and easy to manage,
+  enhancing navigation within your application.
+- **Minimal Dependencies**: Focuses on a lean stack with only 5 core
+  dependencies (Zod, React-Query, Hono, React, Wouter), streamlining development
+  and reducing project overhead.
 
 ## Installation
 
@@ -39,13 +49,3 @@ This is a small template using Bun, Hono, React, Wouter and React-Query.
 - `check`: Formats the code, lints it and checks for errors.
 - `lint`: Checks for TypeScript errors.
 - `all`: Runs all the checks and upgrades the dependencies.
-
-## Technologies Used
-
-- [Bun](https://bun.sh/)
-- [Hono](https://hono.dev/)
-- [React](https://react.dev/)
-- [Wouter](https://github.com/molefrog/wouter)
-- [React Query](https://tanstack.com/query/latest)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Docker](https://www.docker.com/)
