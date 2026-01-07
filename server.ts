@@ -30,7 +30,6 @@ const server = serve({
 	development: Bun.env.NODE_ENV !== "production" && {
 		hmr: true,
 		console: true,
-		chromeDevToolsAutomaticWorkspaceFolders: false,
 	},
 });
 console.log(`🚀 Server running at ${server.url}`);
