@@ -3,19 +3,27 @@ import { hc, type InferRequestType } from "hono/client";
 import type { ServerType } from "../server";
 
 export const qc = new QueryClient();
-export const api = hc<ServerType>("/").api;
+const api = hc<ServerType>("/").api;
 
 export const useHelloQuery = (
 	query: InferRequestType<typeof api.hello.$post>["json"],
 ) =>
 	useQuery({
 		queryKey: ["hello", query],
-		queryFn: () => api.hello.$post({ json: query }).then((x) => x.json()),
+		queryFn: async () => {
+			const res = await api.hello.$post({ json: query });
+			if (!res.ok) throw new Error(res.statusText);
+			return await res.json();
+		},
 	});
 
 export const useIncrementMutation = () =>
 	useMutation({
 		mutationKey: ["increment"],
-		mutationFn: () => api.increment.$post().then((x) => x.json()),
+		mutationFn: async () => {
+			const res = await api.increment.$post();
+			if (!res.ok) throw new Error(res.statusText);
+			return await res.json();
+		},
 		onSuccess: () => qc.invalidateQueries({ queryKey: ["hello"] }),
 	});
