@@ -13,8 +13,18 @@ export const HomePage = () => {
 				Edit <code>client/HomePage.tsx</code> and save to test HMR
 			</p>
 			<p>
-				Message: <strong>{hello.data}</strong>
+				Message:{" "}
+				<strong>
+					{hello.isPending && "Loading..."}
+					{hello.isError && `Error: ${hello.error.message}`}
+					{hello.isSuccess && hello.data}
+				</strong>
 			</p>
+			{increment.isError && (
+				<p style={{ color: "red" }}>
+					Increment failed: {increment.error.message}
+				</p>
+			)}
 			<input
 				type="text"
 				value={name}

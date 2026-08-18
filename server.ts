@@ -6,6 +6,7 @@ import { logger } from "hono/logger";
 import z from "zod";
 import index from "./client/index.html";
 
+// In-memory counter for demonstration purposes (resets on restart/reload)
 let counter = 0;
 
 const app = new Hono()
