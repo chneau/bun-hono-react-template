@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHelloQuery, useIncrementMutation } from "./client";
 
 export const HomePage = () => {
-	const [name, setName] = useState<string>("world");
+	const [name, setName] = useState("world");
 	const hello = useHelloQuery(name);
 	const increment = useIncrementMutation();
 	return (
